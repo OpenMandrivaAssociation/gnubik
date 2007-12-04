@@ -1,5 +1,5 @@
 %define version 2.2
-%define release 2mdk
+%define release  %mkrel 2
 
 Summary:	Graphics puzzle similar to Rubik's cube
 Name:		gnubik
