@@ -32,14 +32,14 @@ rm -rf %{buildroot}
 %makeinstall_std
 
 install -d -m 755 %{buildroot}%{_menudir}
-cat > %{buildroot}%{_menudir}/%{name} << _EOF_
-?package(%{name}): \
- command="%{_bindir}/%{name}" \
- icon="puzzle_section.png" \
- longtitle="Puzzle game similar to Rubik's cube" \
- needs="x11" \
- section="More Applications/Games/Puzzles" \
- title="Gnubik"
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application << _EOF_
+Exec=%{_bindir}/%{name} 
+Icon=puzzle_section 
+Comment=Puzzle game similar to Rubik's cube 
+Categories=Game;LogicGame; 
+Name=Gnubik
 _EOF_
 
 # only 1 french translation exists, and french is not
@@ -69,5 +69,5 @@ rm -rf %{buildroot}
 %{_mandir}/man?/*
 %{_infodir}/*
 
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 
