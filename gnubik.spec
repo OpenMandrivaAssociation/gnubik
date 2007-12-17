@@ -8,7 +8,6 @@ Release:	%{release}
 License:	GPL
 Group:		Games/Puzzles
 URL:		http://www.gnu.org/software/gnubik/
-Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz.sig
