@@ -40,7 +40,7 @@ Icon=puzzle_section
 Comment=Puzzle game similar to Rubik's cube 
 Categories=Game;LogicGame; 
 Name=Gnubik
-_EOF_
+EOF
 
 # only 1 french translation exists, and french is not
 # very different across countries, so use it as the main
