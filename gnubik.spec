@@ -31,7 +31,7 @@ puzzle. It renders an image of a magic cube
 rm -rf %{buildroot}
 %makeinstall_std
 
-install -d -m 755 %{buildroot}%{_menudir}
+install -d -m 755 %{buildroot}%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application << _EOF_
