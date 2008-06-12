@@ -51,14 +51,18 @@ mv %{buildroot}%{_datadir}/locale/{fr_FR,fr}
 %find_lang %{name}
 
 %post
+%if %mdkversion < 200900
 %update_menus
+%endif
 %_install_info %{name}.info
 
 %preun
 %_remove_install_info %{name}.info
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
+%endif
 
 %clean
 rm -rf %{buildroot}
