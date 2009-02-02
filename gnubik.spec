@@ -1,5 +1,5 @@
-%define version 2.2
-%define release  %mkrel 4
+%define version 2.3
+%define release  %mkrel 1
 
 Summary:	Graphics puzzle similar to Rubik's cube
 Name:		gnubik
@@ -12,7 +12,8 @@ Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz.sig
-
+Patch0:		gnubik-2.3-fix-str-fmt.patch
+Patch1:		gnubik-2.3-linkage.patch
 BuildRequires:	guile-devel >= 1.6.4
 BuildRequires:	gtkglext-devel
 
@@ -23,6 +24,8 @@ puzzle. It renders an image of a magic cube
 
 %prep
 %setup -q
+%patch0 -p0
+%patch1 -p0
 
 %build
 %configure2_5x --with-widget-set=gtk
@@ -42,11 +45,6 @@ Comment=Puzzle game similar to Rubik's cube
 Categories=Game;LogicGame; 
 Name=Gnubik
 EOF
-
-# only 1 french translation exists, and french is not
-# very different across countries, so use it as the main
-# translation
-mv %{buildroot}%{_datadir}/locale/{fr_FR,fr}
 
 %find_lang %{name}
 
@@ -71,8 +69,6 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 %{_bindir}/*
 %{_datadir}/%{name}
-%{_mandir}/man?/*
 %{_infodir}/*
-
 %{_datadir}/applications/mandriva-%{name}.desktop
 
