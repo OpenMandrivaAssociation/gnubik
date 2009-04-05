@@ -1,5 +1,5 @@
 %define version 2.3
-%define release  %mkrel 1
+%define release  %mkrel 2
 
 Summary:	Graphics puzzle similar to Rubik's cube
 Name:		gnubik
@@ -38,7 +38,7 @@ rm -rf %{buildroot}
 install -d -m 755 %{buildroot}%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
-Type=Application << _EOF_
+Type=Application
 Exec=%{_bindir}/%{name} 
 Icon=puzzle_section 
 Comment=Puzzle game similar to Rubik's cube 
@@ -71,4 +71,3 @@ rm -rf %{buildroot}
 %{_datadir}/%{name}
 %{_infodir}/*
 %{_datadir}/applications/mandriva-%{name}.desktop
-
