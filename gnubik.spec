@@ -1,5 +1,5 @@
 %define version 2.3
-%define release  %mkrel 2
+%define release  %mkrel 3
 
 Summary:	Graphics puzzle similar to Rubik's cube
 Name:		gnubik
