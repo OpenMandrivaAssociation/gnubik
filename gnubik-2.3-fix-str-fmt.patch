@@ -1,0 +1,48 @@
+--- src/colour-sel.c.str	2009-02-02 11:41:39.000000000 +0100
++++ src/colour-sel.c	2009-02-02 11:42:21.000000000 +0100
+@@ -654,7 +654,7 @@
+ 
+ 	  utf8 =  g_locale_to_utf8 (*s, -1, 0, 0, &gerr);
+ 	  if ( gerr ) {
+-	    g_warning (gerr->message);
++	    g_warning ("%s",gerr->message);
+ 	    g_clear_error (&gerr);
+ 	    gerr=0;
+ 	    continue;
+@@ -663,7 +663,7 @@
+ 	  /* Extract the filename from the uri */
+ 	  filename = g_filename_from_uri (utf8, 0, &gerr);
+ 	  if ( gerr ) {
+-	    g_warning (gerr->message);
++	    g_warning ("%s",gerr->message);
+ 	    g_clear_error (&gerr);
+ 	    continue;
+ 	  }
+@@ -680,7 +680,7 @@
+ 	    pixbuf = create_pixbuf_from_file (filename,  &gerr);
+ 
+ 	    if ( gerr ) {
+-	      g_warning (gerr->message);
++	      g_warning ("%s",gerr->message);
+ 	      g_clear_error (&gerr);
+ 	      return;
+ 	    }
+@@ -688,7 +688,7 @@
+ 	    texName = create_pattern_from_pixbuf (pixbuf, &gerr);
+ 
+ 	    if ( gerr ) {
+-	      g_warning (gerr->message);
++	      g_warning ("%s",gerr->message);
+ 	      g_clear_error (&gerr);
+ 	      return ;
+ 	    }
+--- src/widget-set.c.str	2009-02-02 11:42:41.000000000 +0100
++++ src/widget-set.c	2009-02-02 11:42:50.000000000 +0100
+@@ -546,6 +546,7 @@
+ 				   GTK_DIALOG_MODAL,
+ 				   GTK_MESSAGE_ERROR,
+ 				   GTK_BUTTONS_CLOSE,
++				   "%s",
+ 				   message);
+ 
+   g_free (message);
