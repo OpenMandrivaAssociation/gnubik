@@ -1,0 +1,31 @@
+--- gnubik-2.4/src/menus.c.printf	2012-09-28 21:14:34.547028326 +0400
++++ gnubik-2.4/src/menus.c	2012-09-28 21:15:17.231384967 +0400
+@@ -549,7 +549,7 @@ error_dialog (GtkWindow * parent, const
+   dialog = gtk_message_dialog_new (parent,
+ 				   GTK_DIALOG_MODAL,
+ 				   GTK_MESSAGE_ERROR,
+-				   GTK_BUTTONS_CLOSE, message);
++				   GTK_BUTTONS_CLOSE, "%s", message);
+   g_free (message);
+ 
+   gtk_window_set_title (GTK_WINDOW (dialog), _("Gnubik error"));
+--- gnubik-2.4/src/swatch.c.printf	2012-09-28 21:21:08.351046750 +0400
++++ gnubik-2.4/src/swatch.c	2012-09-28 21:23:17.915032529 +0400
+@@ -255,7 +255,7 @@ on_drag_data_rx (GtkWidget * widget,
+ 	    utf8 = g_locale_to_utf8 (*s, -1, 0, 0, &gerr);
+ 	    if (gerr)
+ 	      {
+-		g_warning (gerr->message);
++		g_warning ("%s", gerr->message);
+ 		g_clear_error (&gerr);
+ 		gerr = 0;
+ 		continue;
+@@ -265,7 +265,7 @@ on_drag_data_rx (GtkWidget * widget,
+ 	    filename = g_filename_from_uri (utf8, 0, &gerr);
+ 	    if (gerr)
+ 	      {
+-		g_warning (gerr->message);
++		g_warning ("%s", gerr->message);
+ 		g_clear_error (&gerr);
+ 		continue;
+ 	      }
