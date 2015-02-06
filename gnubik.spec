@@ -1,5 +1,5 @@
 %define version 2.4
-%define release	1
+%define release	2
 
 Summary:	Graphics puzzle similar to Rubik's cube
 Name:		gnubik
