@@ -20,7 +20,7 @@ puzzle. It renders an image of a magic cube
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure2_5x --with-widget-set=gtk
