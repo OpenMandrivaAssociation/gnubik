@@ -4,7 +4,7 @@ Version:	2.4
 Release:	3
 License:	GPLv3+
 Group:		Games/Puzzles
-URL:		http://www.gnu.org/software/gnubik/
+URL:		https://www.gnu.org/software/gnubik/
 
 Source0:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz
 Source1:	ftp://ftp.gnu.org/gnu/%{name}/%{name}-%{version}.tar.gz.sig
